@@ -48,7 +48,7 @@ public class EconomyClassPassenger extends Passenger {
         while (true) {
             if (passReInput.equals(setPass)) {
                 Scanner flightMilesInput = new Scanner(System.in);
-                System.out.println("Please enter the distance that you have flown with us this year to obtain your remaining flight miles:");
+                System.out.println("Please enter the distance(KM) that you have flown with us this year to obtain your remaining flight miles:");
                 setFlightMiles((flightMilesInput.nextInt() * 0.25));
                 System.out.println("Flight Miles Set.");
                 System.out.println("----------------------------------------------------------------------------");
