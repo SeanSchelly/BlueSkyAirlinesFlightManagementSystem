@@ -136,5 +136,24 @@ public class MainApp {
         //Form details Display
         passenger4.displayDetails(flightSpeed, flightDistance, chosenPlane);
 
+        Scanner feedRequest = new Scanner(System.in);
+        System.out.println("What to do now? Check out our flight feed to track current flights, or see which planes are available! (Input y or n to confirm)");
+        String newFeedRequest = feedRequest.nextLine();
+        if (newFeedRequest.equals("y")) {
+            System.out.println("En-route Aircraft: ");
+            aircraft1.isFlying();
+            aircraft2.isFlying();
+            aircraft3.isFlying();
+            System.out.println("-------------------------------------------------------");
+            System.out.println("Available aircraft: ");
+            aircraft1.displayMaintainedAircraft();
+            aircraft2.displayMaintainedAircraft();
+            aircraft3.displayMaintainedAircraft();
+
+        } else {
+            System.out.println("Thank you for using this program.");
+        }
+
+
     }
 }

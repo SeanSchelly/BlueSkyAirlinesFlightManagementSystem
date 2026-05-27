@@ -17,13 +17,18 @@ public class Aircraft {
         this.maxSpeed = maxSpeed;
     }
 
+    public void aircraftStatsDisplay() {
+    }
 
-    public void displayMaintainedAircraft() {
+     final public void displayMaintainedAircraft() {
+        if (isActive) {
+            System.out.println(make+" is in active service.");
+        } else {
+            System.out.println(make+" is not in active service.");
+        }
         }
 
     public void isFlying() {
-        if (isActive) {
-            System.out.println("AircraftPackage.Aircraft is in active service.");
-        }
+        System.out.println("This plane: "+make+" is currently in flight to [domestic/international]! Check FlightRadar.com to check its course.");
     }
 }
