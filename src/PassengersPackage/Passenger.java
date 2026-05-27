@@ -1,7 +1,7 @@
 package PassengersPackage;
 import java.util.Scanner;
 
-abstract class Passenger {
+public abstract class Passenger {
     private String name;
     private String accountPassword;
     private int age;
