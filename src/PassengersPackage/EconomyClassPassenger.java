@@ -9,8 +9,8 @@ public class EconomyClassPassenger extends Passenger {
     boolean cocktailBarAccess;
     boolean tvAccess;
 
-    public EconomyClassPassenger(String name, int age) {
-        super(name, age);
+    public EconomyClassPassenger(String name, int age, String accountPassword, double flightMiles, int airplaneChoice, int destinationChoice) {
+        super(name, accountPassword, flightMiles, airplaneChoice, destinationChoice, age);
         this.seat_quality = "Required Standard";
         this.hasNetflixAccess = false;
         this.sleepSupport = false;
@@ -20,6 +20,7 @@ public class EconomyClassPassenger extends Passenger {
     }
 
     public void register() {
+
         System.out.println("Economy Class Portal:");
         Scanner passwordInput = new Scanner(System.in);
         System.out.println("Please enter a new password to secure your account:");
@@ -33,9 +34,9 @@ public class EconomyClassPassenger extends Passenger {
         if (passReInput.equals(setPass)) {
             Scanner flightMilesInput = new Scanner(System.in);
             System.out.println("Please enter the distance that you have flown with us this year to obtain your remaining flight miles:");
-            this.flightMiles = (flightMilesInput.nextInt()*0.25);
+            setFlightMiles((flightMilesInput.nextInt()*0.25));
             System.out.println("Flight Miles Set.");
-            System.out.println(this.flightMiles);
+            System.out.println(getFlightMiles());
         } else {
             System.out.println("Incorrect re-entry. Can't continue registration. Restart app.");
         }

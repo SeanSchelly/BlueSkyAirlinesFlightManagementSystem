@@ -1,11 +1,10 @@
 package Destinations;
 
 public class Destination {
-    String cityName;
-    double distance;
-    boolean isAvailable;
-    boolean isInternational;
-    int milesRequired;
+    public String cityName;
+    public double distance;
+    public boolean isAvailable;
+    public boolean isInternational;
 
     public Destination(String cityName, double distance, boolean isAvailable, boolean isInternational) {
         this.cityName = cityName;

@@ -9,8 +9,8 @@ public class BusinessClassPassenger extends Passenger {
     boolean extraMeals;
     boolean cocktailBarAccess;
 
-    public BusinessClassPassenger(String name, int age) {
-        super(name, age);
+    public BusinessClassPassenger(String name, int age, String accountPassword, double flightMiles, int airplaneChoice, int destinationChoice) {
+        super(name, accountPassword, flightMiles, airplaneChoice, destinationChoice, age);
         this.hasNetflixAccess = true;
         this.sleepSupport = true;
         this.extraMeals = true;
@@ -32,9 +32,9 @@ public class BusinessClassPassenger extends Passenger {
         if (passReInput.equals(setPass)) {
             Scanner flightMilesInput = new Scanner(System.in);
             System.out.println("Please enter the distance that you have flown with us this year to obtain your remaining flight miles:");
-            this.flightMiles = (flightMilesInput.nextInt()*3);
+            setFlightMiles((flightMilesInput.nextInt()*0.25));
             System.out.println("Flight Miles Set.");
-            System.out.println(this.flightMiles);
+            System.out.println(getFlightMiles());
         } else {
             System.out.println("Incorrect re-entry. Can't continue registration. Restart app.");
         }
