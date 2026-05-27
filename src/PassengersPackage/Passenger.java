@@ -19,7 +19,7 @@ abstract class Passenger {
     }
     //Abstract methods
     public abstract void register();
-    public abstract void displayDetails(int fS, double fD);
+    public abstract void displayDetails(int fS, double fD, String chosenAircraft);
 
     //Getters and setters for private fields
     public String getName() {

@@ -1,5 +1,4 @@
 package PassengersPackage;
-import javax.xml.stream.events.EndDocument;
 import java.util.Scanner;
 
 public class EconomyClassPassenger extends Passenger {
@@ -52,7 +51,7 @@ public class EconomyClassPassenger extends Passenger {
                 System.out.println("Please enter the distance that you have flown with us this year to obtain your remaining flight miles:");
                 setFlightMiles((flightMilesInput.nextInt() * 0.25));
                 System.out.println("Flight Miles Set.");
-                System.out.println("--------------------------------------------------------------------------------");
+                System.out.println("----------------------------------------------------------------------------");
                 break;
             } else {
                 System.out.println("Err: Incorrect Password, Rerun App.");
@@ -60,9 +59,23 @@ public class EconomyClassPassenger extends Passenger {
         }
     }
 
-    public void displayDetails(int fS, double fD) {
-        System.out.println("Here Are your Final Details, "+getName()+" "+getAge()+" "+getAccountPassword()+" "+getFlightMiles()+" "+" "+getDestinationChoice()+" "+getAirplaneChoice());
-        System.out.println("And your flight duration will be: "+(fD/fS)+"hrs.");
+    public void displayDetails(int fS, double fD, String chosenAircraft) {
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Final Details:");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Name: "+ getName());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Age: "+getAge());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Password: "+getAccountPassword());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Flight miles: "+getFlightMiles());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Chosen Airplane of Transport: "+ chosenAircraft);
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Flight duration: "+(fD/fS)+"hrs.");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Please print these details or carry this digital copy with you on date of departure. BON VOYAGE!");
     };
 
 }

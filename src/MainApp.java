@@ -108,21 +108,25 @@ public class MainApp {
         Scanner aircraftPicker = new Scanner(System.in);
         int choiceAircraft = aircraftPicker.nextInt();
         int flightSpeed = 0;
+        String chosenPlane = "";
         switch (choiceAircraft) {
             case 1:
                 passenger4.setAirplaneChoice(1);
                 System.out.println("Your choice(" + aircraft_DataStore[0] + ")" + " has been logged.");
+                chosenPlane = aircraft_DataStore[0];
                 flightSpeed = aircraft1.maxSpeed;
                 break;
             case 2:
                 passenger4.setAirplaneChoice(2);
                 System.out.println("Your choice(" + aircraft_DataStore[1] + ")" + " has been logged.");
+                chosenPlane = aircraft_DataStore[1];
                 flightSpeed = aircraft2.maxSpeed;
                 break;
             case 3:
                 passenger4.setAirplaneChoice(3);
                 System.out.println("Your choice(" + aircraft_DataStore[2] + ")" + " has been logged.");
                 flightSpeed = aircraft3.maxSpeed;
+                chosenPlane = aircraft_DataStore[2];
                 break;
             default:
                 System.out.println("Invalid choice. You must select between the available aircraft (1-3).");
@@ -130,7 +134,7 @@ public class MainApp {
         }
 
         //Form details Display
-        passenger4.displayDetails(flightSpeed, flightDistance);
+        passenger4.displayDetails(flightSpeed, flightDistance, chosenPlane);
 
     }
 }
