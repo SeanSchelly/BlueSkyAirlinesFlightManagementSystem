@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MainApp {
     public static void main(String[]args) {
-        //Actively Used Aircraft
+        //Supported Aircraft
         Aircraft aircraft1 = new JumboJet("Boeing 747", 500, 12, true, true, 497);
         Aircraft aircraft2 = new TransoceanicAirliner("Boeing 777", 301, 12, true, true, 482);
         Aircraft aircraft3 = new DomesticAirliner("Boeing 737", 150, 7, false, true, 286);
