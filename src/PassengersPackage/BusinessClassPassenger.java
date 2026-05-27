@@ -68,6 +68,6 @@ public class BusinessClassPassenger extends Passenger {
         System.out.println("-----------------------------------------------------------------------------");
         System.out.println("Flight duration: "+(Math.round(fD/fS))+"hrs.");
         System.out.println("-----------------------------------------------------------------------------");
-        System.out.println("Please print these details or carry this digital copy with you as proof of registration on date of departure. BON VOYAGE!");
+        System.out.println("Please print this form or carry this digital copy with you as proof of registration on date of departure. BON VOYAGE!");
     };
 }
