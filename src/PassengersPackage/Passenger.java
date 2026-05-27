@@ -17,9 +17,9 @@ abstract class Passenger {
         this.airplaneChoice = airplaneChoice;
         this.destinationChoice = destinationChoice;
     }
-    //Abstract register method
+    //Abstract methods
     public abstract void register();
-    public abstract void displayDetails();
+    public abstract void displayDetails(int fS, double fD);
 
     //Getters and setters for private fields
     public String getName() {

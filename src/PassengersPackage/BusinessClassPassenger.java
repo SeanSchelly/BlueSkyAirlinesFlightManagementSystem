@@ -52,7 +52,7 @@ public class BusinessClassPassenger extends Passenger {
         }
     }
 
-    public void displayDetails() {
+    public void displayDetails(int fS, double fD) {
         System.out.println("Here Are your Final Details, "+getName()+getAge()+getAccountPassword()+getFlightMiles()+getAirplaneChoice()+getDestinationChoice());
         System.out.println("And your flight duration will be: ");
     };

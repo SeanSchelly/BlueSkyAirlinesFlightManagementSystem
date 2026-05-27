@@ -60,7 +60,7 @@ public class EconomyClassPassenger extends Passenger {
         }
     }
 
-    public void displayDetails() {
+    public void displayDetails(int fS, double fD) {
         System.out.println("Here Are your Final Details, "+getName()+" "+getAge()+" "+getAccountPassword()+" "+getFlightMiles()+" "+" "+getDestinationChoice()+" "+getAirplaneChoice());
         System.out.println("And your flight duration will be: ");
     };
