@@ -53,7 +53,21 @@ public class BusinessClassPassenger extends Passenger {
     }
 
     public void displayDetails(int fS, double fD, String chosenAircraft) {
-        System.out.println("Here Are your Final Details, "+getName()+getAge()+getAccountPassword()+getFlightMiles()+getAirplaneChoice()+getDestinationChoice());
-        System.out.println("And your flight duration will be: ");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Final Details:");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Name: "+ getName());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Age: "+getAge());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Password: "+getAccountPassword());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Flight miles: "+getFlightMiles());
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Chosen Airplane of Transport: "+ chosenAircraft);
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Flight duration: "+(fD/fS)+"hrs.");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Please print these details or carry this digital copy with you on date of departure. BON VOYAGE!");
     };
 }
