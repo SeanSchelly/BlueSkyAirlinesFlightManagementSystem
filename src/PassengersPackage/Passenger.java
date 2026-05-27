@@ -19,6 +19,7 @@ abstract class Passenger {
     }
     //Abstract register method
     public abstract void register();
+    public abstract void displayDetails();
 
     //Getters and setters for private fields
     public String getName() {

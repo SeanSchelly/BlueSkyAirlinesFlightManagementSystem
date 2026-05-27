@@ -1,4 +1,5 @@
 package PassengersPackage;
+import javax.xml.stream.events.EndDocument;
 import java.util.Scanner;
 
 public class EconomyClassPassenger extends Passenger {
@@ -20,27 +21,48 @@ public class EconomyClassPassenger extends Passenger {
     }
 
     public void register() {
-
+        System.out.println("Welcome, to BlueSky Airlines.");
+        System.out.println("------------------------------------------------------------------------------------");
         System.out.println("Economy Class Portal:");
+        System.out.println("------------------------------------------------------------------------------------");
+        Scanner nameInput = new Scanner(System.in);
+        System.out.println("Please enter your name:");
+        String nameNew = nameInput.nextLine();
+        setName(nameNew);
+        System.out.println("Name Set.");
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("Please enter your age:");
+        Scanner ageInput = new Scanner(System.in);
+        int ageNew = ageInput.nextInt();
+        setAge(ageNew);
+        System.out.println("Age Set.");
+        System.out.println("------------------------------------------------------------------------------------");
         Scanner passwordInput = new Scanner(System.in);
         System.out.println("Please enter a new password to secure your account:");
         setAccountPassword(passwordInput.nextLine());
         System.out.println("Password Set.");
-        System.out.println(getAccountPassword());
+        System.out.println("------------------------------------------------------------------------------------");
         System.out.println("Now, enter your password again to continue: ");
         Scanner anotherPasswordInput = new Scanner(System.in);
         String setPass = getAccountPassword();
         String passReInput = anotherPasswordInput.nextLine();
-        if (passReInput.equals(setPass)) {
-            Scanner flightMilesInput = new Scanner(System.in);
-            System.out.println("Please enter the distance that you have flown with us this year to obtain your remaining flight miles:");
-            setFlightMiles((flightMilesInput.nextInt()*0.25));
-            System.out.println("Flight Miles Set.");
-            System.out.println(getFlightMiles());
-        } else {
-            System.out.println("Incorrect re-entry. Can't continue registration. Restart app.");
+        while (true) {
+            if (passReInput.equals(setPass)) {
+                Scanner flightMilesInput = new Scanner(System.in);
+                System.out.println("Please enter the distance that you have flown with us this year to obtain your remaining flight miles:");
+                setFlightMiles((flightMilesInput.nextInt() * 0.25));
+                System.out.println("Flight Miles Set.");
+                System.out.println("--------------------------------------------------------------------------------");
+                break;
+            } else {
+                System.out.println("Err: Incorrect Password, Rerun App.");
+            }
         }
-
     }
+
+    public void displayDetails() {
+        System.out.println("Here Are your Final Details, "+getName()+" "+getAge()+" "+getAccountPassword()+" "+getFlightMiles()+" "+" "+getDestinationChoice()+" "+getAirplaneChoice());
+        System.out.println("And your flight duration will be: ");
+    };
 
 }
