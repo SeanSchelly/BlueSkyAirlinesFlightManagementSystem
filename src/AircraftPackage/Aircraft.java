@@ -17,9 +17,6 @@ public class Aircraft {
         this.maxSpeed = maxSpeed;
     }
 
-    public void aircraftStatsDisplay() {
-    }
-
      final public void displayMaintainedAircraft() {
         if (isActive) {
             System.out.println(make+" is in active service.");
