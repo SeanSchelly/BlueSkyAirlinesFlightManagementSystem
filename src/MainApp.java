@@ -170,5 +170,6 @@ public class MainApp {
             newDestination.destinationAdditionRequest("Spain", "Milan");
         }
 
+        passenger4.displayBenefits();
     }
 }

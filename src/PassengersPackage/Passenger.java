@@ -23,6 +23,7 @@ public abstract class Passenger {
     //Abstract methods with empty bodies to hide complex functionality, defined in subclasses BusinessClassPassenger and EconomyClassPassenger
     public abstract void register();
     public abstract void displayDetails(int fS, double fD, String chosenAircraft);
+    public abstract void displayBenefits();
 
     //Getters and setters to allow user to update private fields and read from them
     public String getName() {

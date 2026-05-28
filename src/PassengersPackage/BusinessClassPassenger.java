@@ -78,5 +78,33 @@ public class BusinessClassPassenger extends Passenger {
         System.out.println("Flight duration: "+(Math.round(fD/fS))+"hrs.");
         System.out.println("-----------------------------------------------------------------------------");
         System.out.println("Please print this form or carry this digital copy with you as proof of registration on date of departure. BON VOYAGE!");
-    };
+    }
+
+    public void displayBenefits() {
+        System.out.println("As an Economy Class passenger, your benefits are as follows: ");
+        //
+        if (seat_quality.equals("Highest Standard")) {
+            System.out.println("1. You have the highest standard seat.");
+        } else {
+            System.out.println("1. Your seat respects required standards.");
+        }
+        //
+        if (hasNetflixAccess) {
+            System.out.println("2. You have complete access of Netflix Premium Subscription.");
+        } else {
+            System.out.println("2. On-demand streaming services are unsupported for your plan.");
+        }
+        //
+        if (sleepSupport) {
+            System.out.println("3. Your polymorph seat has quality sleep support with latest Keste Damena foam Mattress.");
+        } else {
+            System.out.println("3. You have retractable seat.");
+        }
+        //
+        if (extraMeals) {
+            System.out.println("4. You may request extra meals and snacks without extra cost.");
+        } else {
+            System.out.println("4. Your snack requests can't exceed quota of 4, and meals are served once.");
+        }
+    }
 }
