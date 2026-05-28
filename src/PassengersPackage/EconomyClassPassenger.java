@@ -99,7 +99,7 @@ public class EconomyClassPassenger extends Passenger {
         }
         //
         if (sleepSupport) {
-            System.out.println("3. Your polymorph seat has quality sleep support with latest Keste Damena foam Mattress.");
+            System.out.println("3. Your polymorph seat has quality sleep support.");
         } else {
             System.out.println("3. You have retractable seat.");
         }
