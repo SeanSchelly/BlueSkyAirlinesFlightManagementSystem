@@ -31,9 +31,8 @@ public class Destination {
     }
 
     public void destinationAdditionRequest(int proposedPrice) {
-        System.out.println("Send us a pricing proposal(in $) for our future domestic flights. The price must be above $40: ");
         Scanner additionReq1 = new Scanner(System.in);
-        System.out.println("Enter country:");
+        System.out.println("Send us a pricing proposal(in $) for our future domestic flights. The price must be above $40: ");
         proposedPrice = additionReq1.nextInt();
         int[] priceRequestStore = {};
         if (proposedPrice<40) {
