@@ -33,9 +33,9 @@ public class MainApp {
         EconomyClassPassenger passenger3 = new EconomyClassPassenger("Kebebush", 29, "Nahbruh7", 7.21, 2, 1);
 
         //New Passenger Registration
-        EconomyClassPassenger passenger4 = new EconomyClassPassenger("", 0, "", 0.0, 0, 0);
-        passenger4.register();
+        Passenger passenger4 = new BusinessClassPassenger("", 0, "", 0.0, 0, 0);
 
+        passenger4.register();
         //Destination Picker
         System.out.println("Please pick your next destination:");
         System.out.println("1 - ".concat(destination_DataStore[0]));
@@ -151,9 +151,11 @@ public class MainApp {
             aircraft3.displayMaintainedAircraft();
 
         } else {
-            System.out.println("Thank you for using this program.");
+            System.out.println("End of program.");
         }
-
-
+        System.out.println("Please also complete the following requests: ");
+        Destination newDestination = new DomesticDestination("", 0.0, false, false);
+        newDestination.destinationAdditionRequest(50);
+        newDestination.destinationAdditionRequest("Spain", "Milan");
     }
 }
