@@ -7,6 +7,6 @@ public class DomesticAirliner extends Aircraft {
 
     @Override
     public void isFlying() {
-        System.out.println("Aircraft: "+make+" is currently in flight to a domestic destination! Check FlightRadar.com to check its full course.");
+        System.out.println("Aircraft: "+getMake()+" is currently in flight to a domestic destination! Check FlightRadar.com to check its full course.");
     }
 }

@@ -13,7 +13,7 @@ public class MainApp {
         Aircraft aircraft3 = new DomesticAirliner("Boeing 737", 150, 7, false, true, 286);
 
         //Aircraft Data Structure, using Arrays and calling fields using objects previously created
-        String[] aircraft_DataStore = {aircraft1.make, aircraft2.make, aircraft3.make};
+        String[] aircraft_DataStore = {aircraft1.getMake(), aircraft2.getMake(), aircraft3.getMake()};
 
         //Supported Domestic Destinations, showing object creation. Demonstrates hierarchical inheritance
         Destination destination1 = new DomesticDestination("Hawassa", 114.7, true, false);
@@ -105,9 +105,9 @@ public class MainApp {
 
         //Aircraft Picker with Aircraft objects being used to call, for display, respective fields
         System.out.println("Please pick from the available aircraft for your travel:");
-        System.out.println("1 - ".concat(aircraft1.make) + " with capacity " + aircraft1.totalCapacity + "," + "with " + aircraft1.crewCapacity + " crew.");
-        System.out.println("2 - ".concat(aircraft2.make) + " with capacity " + aircraft2.totalCapacity + "," + "with " + aircraft2.crewCapacity + " crew.");
-        System.out.println("3 - ".concat(aircraft3.make) + " with capacity " + aircraft3.totalCapacity + "," + "with " + aircraft3.crewCapacity + " crew.");
+        System.out.println("1 - ".concat(aircraft1.getMake()) + " with capacity " + aircraft1.getTotalCapacity() + "," + "with " + aircraft1.getCrewCapacity() + " crew.");
+        System.out.println("2 - ".concat(aircraft2.getMake()) + " with capacity " + aircraft2.getTotalCapacity() + "," + "with " + aircraft2.getCrewCapacity() + " crew.");
+        System.out.println("3 - ".concat(aircraft3.getMake()) + " with capacity " + aircraft3.getTotalCapacity() + "," + "with " + aircraft3.getCrewCapacity() + " crew.");
 
         //Scanner implemented for input to record aircraft choice for flight details as an integer
         Scanner aircraftPicker = new Scanner(System.in);
@@ -121,18 +121,18 @@ public class MainApp {
                 passenger4.setAirplaneChoice(1);
                 System.out.println("Your choice(" + aircraft_DataStore[0] + ")" + " has been logged.");
                 chosenPlane = aircraft_DataStore[0];
-                flightSpeed = aircraft1.maxSpeed;
+                flightSpeed = aircraft1.getMaxSpeed();
                 break;
             case 2:
                 passenger4.setAirplaneChoice(2);
                 System.out.println("Your choice(" + aircraft_DataStore[1] + ")" + " has been logged.");
                 chosenPlane = aircraft_DataStore[1];
-                flightSpeed = aircraft2.maxSpeed;
+                flightSpeed = aircraft2.getMaxSpeed();
                 break;
             case 3:
                 passenger4.setAirplaneChoice(3);
                 System.out.println("Your choice(" + aircraft_DataStore[2] + ")" + " has been logged.");
-                flightSpeed = aircraft3.maxSpeed;
+                flightSpeed = aircraft3.getMaxSpeed();
                 chosenPlane = aircraft_DataStore[2];
                 break;
             default:

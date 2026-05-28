@@ -3,14 +3,36 @@ package AircraftPackage;
 
 //Aircraft Super class to define generic aircraft attributes. Uses public access modifier
 public class Aircraft {
-    public String make;
-    public double totalCapacity;
-    public int crewCapacity;
-    public boolean isInternational;
-    public boolean isActive;
-    public int maxSpeed;
+    private String make;
+    private double totalCapacity;
+    private int crewCapacity;
+    private boolean isInternational;
+    private boolean isActive;
+    private int maxSpeed;
 
-    public Aircraft(String make, double totalCapacity, int crewCapacity, boolean isInternational, boolean isActive, int maxSpeed) {
+    public String getMake() {
+        return make;
+    }
+
+    public double getTotalCapacity() {
+        return totalCapacity;
+    }
+    public int getCrewCapacity() {
+        return crewCapacity;
+    }
+
+    public boolean getIsInternational() {
+        return isInternational;
+    }
+    public boolean getIsActive() {
+        return isActive;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    Aircraft(String make, double totalCapacity, int crewCapacity, boolean isInternational, boolean isActive, int maxSpeed) {
         this.make = make;
         this.totalCapacity = totalCapacity;
         this.crewCapacity = crewCapacity;
