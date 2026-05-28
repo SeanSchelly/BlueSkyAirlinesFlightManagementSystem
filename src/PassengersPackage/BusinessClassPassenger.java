@@ -1,7 +1,8 @@
+//Package imports
 package PassengersPackage;
-
 import java.util.Scanner;
 
+//BusinessClassPassenger subclass, which inherits properties from a generic passenger. Uses public access modifier for universal access
 public class BusinessClassPassenger extends Passenger {
     String seat_quality;
     boolean hasNetflixAccess;
@@ -9,6 +10,7 @@ public class BusinessClassPassenger extends Passenger {
     boolean extraMeals;
     boolean cocktailBarAccess;
 
+    //BusinessClassPassenger parametrized constructor created to enable object creation, uses super keyword to refer to superclass fields
     public BusinessClassPassenger(String name, int age, String accountPassword, double flightMiles, int airplaneChoice, int destinationChoice) {
         super(name, accountPassword, flightMiles, airplaneChoice, destinationChoice, age);
         this.hasNetflixAccess = true;
@@ -58,6 +60,7 @@ public class BusinessClassPassenger extends Passenger {
         }
     }
 
+    //Defined abstract method from super class
     public void displayDetails(int fS, double fD, String chosenAircraft) {
         System.out.println("-----------------------------------------------------------------------------");
         System.out.println("Final Details:");

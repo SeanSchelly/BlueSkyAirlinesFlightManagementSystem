@@ -1,33 +1,35 @@
+//Package imports
 import AircraftPackage.*;
 import PassengersPackage.*;
 import Destinations.*;
 import java.util.Scanner;
 
+//Main Class with main method for running the core console-based management system
 public class MainApp {
     public static void main(String[]args) {
-        //Supported Aircraft
+        //Supported Aircraft demonstration, showing object creation. Demonstrates hierarchical inheritance
         Aircraft aircraft1 = new JumboJet("Boeing 747", 500, 12, true, true, 497);
         Aircraft aircraft2 = new TransoceanicAirliner("Boeing 777", 301, 12, true, true, 482);
         Aircraft aircraft3 = new DomesticAirliner("Boeing 737", 150, 7, false, true, 286);
 
-        //Aircraft Data Structure
+        //Aircraft Data Structure, using Arrays and calling fields using objects previously created
         String[] aircraft_DataStore = {aircraft1.make, aircraft2.make, aircraft3.make};
 
-        //Supported Domestic Destinations
+        //Supported Domestic Destinations, showing object creation. Demonstrates hierarchical inheritance
         Destination destination1 = new DomesticDestination("Hawassa", 114.7, true, false);
         Destination destination2 = new DomesticDestination("Bahir Dar", 179.8, true, false);
 
-        //Supported International Destinations
+        //Supported International Destinations, showing object creation. Demonstrates hierarchical inheritance
         Destination destination3 = new InternationalDestination("Frankfurt", 2883.8, true, true, "Germany");
         Destination destination4 = new InternationalDestination("Seoul", 4969.8, true, true, "South Korea");
         Destination destination5 = new InternationalDestination("Singapore", 3924, true, true, "Singapore");
         Destination destination6 = new InternationalDestination("Nairobi", 625, true, true, "Kenya");
         Destination destination7 = new InternationalDestination("New York", 6054.4, true, true, "United States of America");
 
-        //Destination Data Structure
+        //Destination Data Structure illustrating Array use with destination object fields being called
         String[] destination_DataStore = {destination1.cityName, destination2.cityName, destination3.cityName, destination4.cityName, destination5.cityName, destination6.cityName, destination7.cityName};
 
-        //Already Registered Passengers
+        //Already Registered Passengers showing object creation. Demonstrates inheritance and subclass referencing
         EconomyClassPassenger passenger1 = new EconomyClassPassenger("Berhanu", 29, "Twopeople12", 2.1, 1, 2);
         BusinessClassPassenger passenger2 = new BusinessClassPassenger("Wilhelm", 23, "Thatsgreat2", 3.5, 2, 3);
         EconomyClassPassenger passenger3 = new EconomyClassPassenger("Kebebush", 29, "Nahbruh7", 7.21, 2, 1);
@@ -36,7 +38,7 @@ public class MainApp {
         Passenger passenger4 = new BusinessClassPassenger("", 0, "", 0.0, 0, 0);
 
         passenger4.register();
-        //Destination Picker
+        //Destination Picker Options, using Array Indexing to pick out individual options
         System.out.println("Please pick your next destination:");
         System.out.println("1 - ".concat(destination_DataStore[0]));
         System.out.println("2 - ".concat(destination_DataStore[1]));
@@ -45,10 +47,13 @@ public class MainApp {
         System.out.println("5 - ".concat(destination_DataStore[4]));
         System.out.println("6 - ".concat(destination_DataStore[5]));
         System.out.println("7 - ".concat(destination_DataStore[6]));
-
+        //Scanner being implemented to add input for switch case decision-making
         Scanner pickDestination = new Scanner(System.in);
         int newDestinationChoice = pickDestination.nextInt();
+        //
         double flightDistance = 0;
+        //
+        //In the following, the chosen no. will be set as the destinationChoice field's value using the setter mutator.
         switch (newDestinationChoice) {
             case 1:
                 passenger4.setDestinationChoice(1);
@@ -98,15 +103,17 @@ public class MainApp {
         }
 
 
-        //Aircraft Picker
+        //Aircraft Picker with Aircraft objects being used to call, for display, respective fields
         System.out.println("Please pick from the available aircraft for your travel:");
         System.out.println("1 - ".concat(aircraft1.make) + " with capacity " + aircraft1.totalCapacity + "," + "with " + aircraft1.crewCapacity + " crew.");
         System.out.println("2 - ".concat(aircraft2.make) + " with capacity " + aircraft2.totalCapacity + "," + "with " + aircraft2.crewCapacity + " crew.");
         System.out.println("3 - ".concat(aircraft3.make) + " with capacity " + aircraft3.totalCapacity + "," + "with " + aircraft3.crewCapacity + " crew.");
 
-        //
+        //Scanner implemented for input to record aircraft choice for flight details as an integer
         Scanner aircraftPicker = new Scanner(System.in);
         int choiceAircraft = aircraftPicker.nextInt();
+        //
+        //Following variable is declared outside local switch scope so its value (the max speed of the selected aircraft, can be used in flight duration calculation)
         int flightSpeed = 0;
         String chosenPlane = "";
         switch (choiceAircraft) {
@@ -133,29 +140,35 @@ public class MainApp {
                 System.out.println("Rerun app.");
         }
 
-        //Form details Display
+        //Form details Display, takes 3 arguments, with the first two being used to calculate the flight duration (flightDistance/flightSpeed)
         passenger4.displayDetails(flightSpeed, flightDistance, chosenPlane);
 
+        //Extra Scanner implementation to obtain input and provide additional functionality to the app (displaying flight logs, e.g., as demonstrated below)
         Scanner feedRequest = new Scanner(System.in);
         System.out.println("What to do now? Check out our flight feed to track current flights, or see which planes are available! (Input y or n to confirm)");
         String newFeedRequest = feedRequest.nextLine();
         if (newFeedRequest.equals("y")) {
             System.out.println("En-route Aircraft: ");
+            //aircraft 1,2,3 can call following method as isFlying() is an override.
             aircraft1.isFlying();
             aircraft2.isFlying();
             aircraft3.isFlying();
             System.out.println("-------------------------------------------------------");
             System.out.println("Available aircraft: ");
+            //Following method being called is final, can't be inherited
             aircraft1.displayMaintainedAircraft();
             aircraft2.displayMaintainedAircraft();
             aircraft3.displayMaintainedAircraft();
 
         } else {
-            System.out.println("End of program.");
+            System.out.println("In that case, please complete the following: ");
+            System.out.println("Please also complete the following requests: ");
+            Destination newDestination = new DomesticDestination("", 0.0, false, false);
+
+            //Following illustrates compile-time polymorphism (method overloading) through the creation of a new destination request.
+            newDestination.destinationAdditionRequest(50);
+            newDestination.destinationAdditionRequest("Spain", "Milan");
         }
-        System.out.println("Please also complete the following requests: ");
-        Destination newDestination = new DomesticDestination("", 0.0, false, false);
-        newDestination.destinationAdditionRequest(50);
-        newDestination.destinationAdditionRequest("Spain", "Milan");
+
     }
 }

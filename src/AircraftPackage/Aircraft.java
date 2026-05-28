@@ -1,5 +1,7 @@
+//Package import
 package AircraftPackage;
 
+//Aircraft Super class to define generic aircraft attributes. Uses public access modifier
 public class Aircraft {
     public String make;
     public double totalCapacity;
