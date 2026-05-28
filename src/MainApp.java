@@ -11,6 +11,7 @@ public class MainApp {
         Aircraft aircraft1 = new JumboJet("Boeing 747", 500, 12, true, true, 497);
         Aircraft aircraft2 = new TransoceanicAirliner("Boeing 777", 301, 12, true, true, 482);
         Aircraft aircraft3 = new DomesticAirliner("Boeing 737", 150, 7, false, true, 286);
+        Aircraft aircraft4 = new DomesticAirliner("A320", 180, 6, false, false, 828);
 
         //Aircraft Data Structure, using Arrays and calling fields using objects previously created
         String[] aircraft_DataStore = {aircraft1.getMake(), aircraft2.getMake(), aircraft3.getMake()};
@@ -148,6 +149,7 @@ public class MainApp {
         System.out.println("What to do now? Check out our flight feed to track current flights, or see which planes are available! (Input y or n to confirm)");
         String newFeedRequest = feedRequest.nextLine();
         if (newFeedRequest.equals("y")) {
+            System.out.println("-----------------------------------------------------------------------------");
             System.out.println("En-route Aircraft: ");
             //aircraft 1,2,3 can call following method as isFlying() is an override.
             aircraft1.isFlying();
@@ -159,7 +161,7 @@ public class MainApp {
             aircraft1.displayMaintainedAircraft();
             aircraft2.displayMaintainedAircraft();
             aircraft3.displayMaintainedAircraft();
-
+            aircraft4.displayMaintainedAircraft();
         } else {
             System.out.println("In that case, please complete the following: ");
             System.out.println("Please also complete the following requests: ");

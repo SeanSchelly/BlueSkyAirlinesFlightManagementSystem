@@ -3,12 +3,12 @@ package AircraftPackage;
 
 //Aircraft Super class to define generic aircraft attributes. Uses public access modifier
 public class Aircraft {
-    private String make;
-    private double totalCapacity;
-    private int crewCapacity;
-    private boolean isInternational;
-    private boolean isActive;
-    private int maxSpeed;
+    private final String make;
+    private final double totalCapacity;
+    private final int crewCapacity;
+    private final boolean isInternational;
+    private final boolean isActive;
+    private final int maxSpeed;
 
     public String getMake() {
         return make;
@@ -43,13 +43,22 @@ public class Aircraft {
 
      final public void displayMaintainedAircraft() {
         if (isActive) {
-            System.out.println(make+" is in active service.");
+            System.out.println(getMake()+" is in active service.");
+            System.out.println("Here is its information: ");
+            System.out.println("-----------------------------------------------------------------------------");
+            System.out.println("Total capacity: "+getTotalCapacity());
+            System.out.println("-----------------------------------------------------------------------------");
+            System.out.println("Crew capacity: "+getCrewCapacity());
+            System.out.println("-----------------------------------------------------------------------------");
+            System.out.println("International status: "+getIsInternational());
+            System.out.println("-----------------------------------------------------------------------------");
+
         } else {
-            System.out.println(make+" is not in active service.");
+            System.out.println(getMake()+" is not in active service. Can't display information for now.");
         }
         }
 
     public void isFlying() {
-        System.out.println("This plane: "+make+" is currently in flight to [domestic/international]! Check FlightRadar.com to check its course.");
+        System.out.println("This plane: "+getMake()+" is currently in flight to [domestic/international]! Check FlightRadar.com to check its course.");
     }
 }
