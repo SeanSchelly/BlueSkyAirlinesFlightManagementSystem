@@ -3,7 +3,7 @@ package PassengersPackage;
 
 //Abstract Passenger super class to define generic passenger attributes. Uses public access modifier for universal access.
 public abstract class Passenger {
-    //private fields, can't be read from or written to without getters or setters that are defined below
+    //Private fields to enforce encapsulation of sensitive data
     private String name;
     private String accountPassword;
     private int age;

@@ -23,7 +23,7 @@ public class EconomyClassPassenger extends Passenger {
         this.tvAccess = true;
     }
 
-    //Defined abstract method from super class
+    //Implementation of abstract method defined in Passenger Superclass
     public void register() {
         System.out.println("Welcome, to BlueSky Airlines.");
         System.out.println("------------------------------------------------------------------------------------");
@@ -72,7 +72,7 @@ public class EconomyClassPassenger extends Passenger {
         }
     }
 
-    //Defined abstract method from super class
+    //Implementation of abstract method defined in Passenger Superclass
     public void displayDetails(int fS, double fD, String chosenAircraft) {
         System.out.println("-----------------------------------------------------------------------------");
         System.out.println("Final Details:");
@@ -92,6 +92,7 @@ public class EconomyClassPassenger extends Passenger {
         System.out.println("Please print this form or carry this digital copy with you on date of departure. BON VOYAGE!");
     };
 
+    //Implementation of abstract method defined in Passenger Superclass
     public void displayBenefits() {
         System.out.println("As an Economy Class passenger, your benefits are as follows: ");
         //

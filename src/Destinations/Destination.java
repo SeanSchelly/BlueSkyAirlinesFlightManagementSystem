@@ -1,6 +1,6 @@
-package Destinations;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+package Destinations;//Package import
+import java.util.InputMismatchException;//import of exception for inputs of incorrect data type
+import java.util.Scanner;//Scanner import
 
 public class Destination {
     public String cityName;
@@ -8,6 +8,7 @@ public class Destination {
     public boolean isAvailable;
     public boolean isInternational;
 
+    //Destination constructor
     public Destination(String cityName, double distance, boolean isAvailable, boolean isInternational) {
         this.cityName = cityName;
         this.distance = distance;

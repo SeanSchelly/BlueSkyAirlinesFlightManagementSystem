@@ -21,11 +21,14 @@ public class BusinessClassPassenger extends Passenger {
         this.seat_quality = "Highest Standard";
     }
 
+    //Implementation of abstract method defined in Passenger Superclass
     public void register() {
         System.out.println("Welcome, to BlueSky Airlines.");
         System.out.println("------------------------------------------------------------------------------------");
+
         System.out.println("Business Class Portal:");
         System.out.println("------------------------------------------------------------------------------------");
+
         Scanner nameInput = new Scanner(System.in);
         System.out.println("Please enter your name:");
         String nameNew = nameInput.nextLine();
@@ -69,7 +72,7 @@ public class BusinessClassPassenger extends Passenger {
         }
     }
 
-    //Defined abstract method from super class
+    //Implementation of abstract method defined in Passenger Superclass
     public void displayDetails(int fS, double fD, String chosenAircraft) {
         System.out.println("-----------------------------------------------------------------------------");
         System.out.println("Final Details:");
@@ -89,6 +92,7 @@ public class BusinessClassPassenger extends Passenger {
         System.out.println("Please print this form or carry this digital copy with you as proof of registration on date of departure. BON VOYAGE!");
     }
 
+    //Implementation of abstract method defined in Passenger Superclass
     public void displayBenefits() {
         System.out.println("As a Business Class passenger, your benefits are as follows: ");
         //
