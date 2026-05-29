@@ -61,6 +61,7 @@ public class BusinessClassPassenger extends Passenger {
                 passReInput = anotherPasswordInput.nextLine();
             }
         }
+        //Exception handling implemented to ensure that Flight Miles input is not of unsupported data type
         try {
             Scanner flightMilesInput = new Scanner(System.in);
             System.out.println("Please enter the distance(KM) that you have flown with us this year to obtain your remaining flight miles(Premium Rate):");
