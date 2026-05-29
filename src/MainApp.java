@@ -38,6 +38,7 @@ public class MainApp {
         //New Passenger Registration
         Passenger passenger4 = new BusinessClassPassenger("", 0, "", 0.0, 0, 0);
 
+        //Calling register method for passenger4.
         passenger4.register();
         //Destination Picker Options, using Array Indexing to pick out individual options
         System.out.println("Please pick your next destination:");
@@ -171,11 +172,12 @@ public class MainApp {
             System.out.println("In that case, please complete the following (It will help develop our future business model): ");
             Destination newDestination = new DomesticDestination("", 0.0, false, false);
 
-            //Following illustrates compile-time polymorphism (method overloading) through the creation of a new destination request.
+            //Following illustrates compile-time polymorphism (method overloading) through the creation of a new destination request placeholders.
             newDestination.destinationAdditionRequest(50);
             newDestination.destinationAdditionRequest("Spain", "Milan");
         }
 
+        //Calling displayBenefits method for passenger 4
         passenger4.displayBenefits();
     }
 }
