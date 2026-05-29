@@ -109,7 +109,7 @@ public class MainApp {
         System.out.println("1 - ".concat(aircraft1.getMake()) + " with capacity " + aircraft1.getTotalCapacity() + "," + "with " + aircraft1.getCrewCapacity() + " crew.");
         System.out.println("2 - ".concat(aircraft2.getMake()) + " with capacity " + aircraft2.getTotalCapacity() + "," + "with " + aircraft2.getCrewCapacity() + " crew.");
         System.out.println("3 - ".concat(aircraft3.getMake()) + " with capacity " + aircraft3.getTotalCapacity() + "," + "with " + aircraft3.getCrewCapacity() + " crew.");
-        System.out.println("4 - ");
+        System.out.println("3 - ".concat(aircraft4.getMake()) + " with capacity " + aircraft4.getTotalCapacity() + "," + "with " + aircraft4.getCrewCapacity() + " crew.");
 
         //Scanner implemented for input to record aircraft choice for flight details as an integer
         Scanner aircraftPicker = new Scanner(System.in);
