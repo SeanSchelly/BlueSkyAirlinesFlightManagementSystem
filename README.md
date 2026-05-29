@@ -29,3 +29,30 @@ INHERITANCE LOGIC:
 ![img.png](img.png)
 
 CONCEPT IMPLEMENTATIONS:
+
+Polymorphism:
+
+Method overloading - Destination.java -> lines 19, 35 , MainApp.java -> lines 176-177
+
+Overriding - DomesticAirliner.java, JumboJet.java, TransoceanicAirliner.java
+
+Basic Exception handling(validation) - Destination.java -> line 37, EconomyClassPassenger.java -> line 64
+Inheritence - (Can be seen thoughout project)
+
+Encapsulation:
+
+(private variables, getters and setters)
+(private fields) - Aircraft.java -> lines 7-12
+(mutators) - Aircraft.java, Passenger.java -> lines 28-76
+
+Access modifiers: 
+
+(public, private)
+public - can be seen throughout
+private - in fields as aforementioned
+
+Classes and Object:
+
+Classes - can be seen throughout
+Objects - MainApp.java -> lines 11-15, lines 20-21, lines 24-28, lines 34-39
+
