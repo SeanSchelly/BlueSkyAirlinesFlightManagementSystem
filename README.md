@@ -5,7 +5,7 @@ A simple flight registration managment system that runs on the console.
 CORE FEATURES:
 Current Flight logs, Mini Form for registration, Flight Miles calculation for Economy and Business class passengers,
 Benefits display for both passenger plans, Available Aircraft with capacity and other detail, Basic registration form
-decision-making
+decision-making, Packages for improved organization, Private access modifier for data privacy.
 
 USAGE DOCUMENTATION:
 1. Download the **.zip** file of this project.
