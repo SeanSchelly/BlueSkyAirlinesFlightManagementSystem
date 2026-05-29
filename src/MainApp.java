@@ -137,6 +137,9 @@ public class MainApp {
                 flightSpeed = aircraft3.getMaxSpeed();
                 chosenPlane = aircraft_DataStore[2];
                 break;
+            case 4:
+                passenger4.setAirplaneChoice(4);
+                System.out.println("Your choice(" + aircraft_DataStore[3] + ")" + " has been logged.");
             default:
                 System.out.println("Invalid choice. You must select between the available aircraft (1-3).");
                 System.out.println("Rerun app.");
