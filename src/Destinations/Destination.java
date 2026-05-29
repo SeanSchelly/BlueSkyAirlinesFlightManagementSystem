@@ -1,4 +1,5 @@
 package Destinations;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Destination {
@@ -31,15 +32,24 @@ public class Destination {
     }
 
     public void destinationAdditionRequest(int proposedPrice) {
-        Scanner additionReq1 = new Scanner(System.in);
-        System.out.println("Send us a pricing proposal(in $) for our future domestic flights. The price must be above $40: ");
-        proposedPrice = additionReq1.nextInt();
-        int[] priceRequestStore = {};
-        if (proposedPrice<40) {
-            System.out.println("Invalid price, the request will not be logged.");
-        } else {
-            priceRequestStore = new int[]{proposedPrice};
-            System.out.println("Your choice: "+priceRequestStore[0]);
+        try {
+            Scanner additionReq1 = new Scanner(System.in);
+            System.out.println("Send us a pricing proposal(in $) for our future domestic flights. The price must be above $40: ");
+            proposedPrice = additionReq1.nextInt();
+            int[] priceRequestStore = {0};
+            if (proposedPrice<40) {
+                while ((proposedPrice<40)) {
+                    System.out.println("Invalid price, the request will not be logged.");
+                    additionReq1 = new Scanner(System.in);
+                    System.out.println("Send us a pricing proposal(in $) for our future domestic flights. The price must be above $40: ");
+                    proposedPrice = additionReq1.nextInt();
+                }
+            } else {
+                priceRequestStore[0] = proposedPrice;
+                System.out.println("Your choice: "+priceRequestStore[0]);
+            }
+        } catch(InputMismatchException e) {
+            System.out.println("Err: Incorrect input type. Please restart the app and reenter price as an integer.");
         }
     }
 }

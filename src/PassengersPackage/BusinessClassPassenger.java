@@ -1,5 +1,6 @@
 //Package imports
 package PassengersPackage;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //BusinessClassPassenger subclass, which inherits properties from a generic passenger. Uses public access modifier for universal access
@@ -23,7 +24,7 @@ public class BusinessClassPassenger extends Passenger {
     public void register() {
         System.out.println("Welcome, to BlueSky Airlines.");
         System.out.println("------------------------------------------------------------------------------------");
-        System.out.println("Economy Class Portal:");
+        System.out.println("Business Class Portal:");
         System.out.println("------------------------------------------------------------------------------------");
         Scanner nameInput = new Scanner(System.in);
         System.out.println("Please enter your name:");
@@ -37,6 +38,7 @@ public class BusinessClassPassenger extends Passenger {
         setAge(ageNew);
         System.out.println("Age Set.");
         System.out.println("------------------------------------------------------------------------------------");
+
         Scanner passwordInput = new Scanner(System.in);
         System.out.println("Please enter a new password to secure your account:");
         setAccountPassword(passwordInput.nextLine());
@@ -46,17 +48,24 @@ public class BusinessClassPassenger extends Passenger {
         Scanner anotherPasswordInput = new Scanner(System.in);
         String setPass = getAccountPassword();
         String passReInput = anotherPasswordInput.nextLine();
-        while (true) {
-            if (passReInput.equals(setPass)) {
-                Scanner flightMilesInput = new Scanner(System.in);
-                System.out.println("Please enter the distance(KM) that you have flown with us this year to obtain your remaining flight miles:");
-                setFlightMiles((flightMilesInput.nextInt() * 0.25));
-                System.out.println("Flight Miles Set.");
-                System.out.println("----------------------------------------------------------------------------");
-                break;
-            } else {
-                System.out.println("Err: Incorrect Password, Rerun App.");
+        if (passReInput.equals(setPass)) {
+            System.out.println("Correct reentry, continue.");
+        } else {
+            while (!(passReInput.equals(setPass))) {
+                System.out.println("You've not reentered the correct password. Please input it again to continue: ");
+                anotherPasswordInput = new Scanner(System.in);
+                setPass = getAccountPassword();
+                passReInput = anotherPasswordInput.nextLine();
             }
+        }
+        try {
+            Scanner flightMilesInput = new Scanner(System.in);
+            System.out.println("Please enter the distance(KM) that you have flown with us this year to obtain your remaining flight miles(Premium Rate):");
+            setFlightMiles((flightMilesInput.nextInt() * 1.25));
+            System.out.println("Flight Miles Set.");
+            System.out.println("----------------------------------------------------------------------------");
+        } catch(InputMismatchException e) {
+            System.out.println("Err: Wrong type of input! Rerun program and enter an integer when prompted.");
         }
     }
 
@@ -81,7 +90,7 @@ public class BusinessClassPassenger extends Passenger {
     }
 
     public void displayBenefits() {
-        System.out.println("As an Economy Class passenger, your benefits are as follows: ");
+        System.out.println("As a Business Class passenger, your benefits are as follows: ");
         //
         if (seat_quality.equals("Highest Standard")) {
             System.out.println("1. You have the highest standard seat.");

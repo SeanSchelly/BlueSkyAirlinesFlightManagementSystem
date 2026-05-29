@@ -1,5 +1,6 @@
 //Package imports
 package PassengersPackage;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //EconomyClassPassenger subclass, which inherits properties from a generic passenger. Uses public access modifier for universal access
@@ -40,6 +41,7 @@ public class EconomyClassPassenger extends Passenger {
         setAge(ageNew);
         System.out.println("Age Set.");
         System.out.println("------------------------------------------------------------------------------------");
+
         Scanner passwordInput = new Scanner(System.in);
         System.out.println("Please enter a new password to secure your account:");
         setAccountPassword(passwordInput.nextLine());
@@ -49,17 +51,24 @@ public class EconomyClassPassenger extends Passenger {
         Scanner anotherPasswordInput = new Scanner(System.in);
         String setPass = getAccountPassword();
         String passReInput = anotherPasswordInput.nextLine();
-        while (true) {
-            if (passReInput.equals(setPass)) {
-                Scanner flightMilesInput = new Scanner(System.in);
-                System.out.println("Please enter the distance(KM) that you have flown with us this year to obtain your remaining flight miles:");
-                setFlightMiles((flightMilesInput.nextInt() * 0.25));
-                System.out.println("Flight Miles Set.");
-                System.out.println("----------------------------------------------------------------------------");
-                break;
-            } else {
-                System.out.println("Err: Incorrect Password, Rerun App.");
+        if (passReInput.equals(setPass)) {
+            System.out.println("Correct reentry. Continue.");
+        } else {
+            while (!(passReInput.equals(setPass))) {
+                System.out.println("You've not reentered the correct password. Please input it again to continue: ");
+                anotherPasswordInput = new Scanner(System.in);
+                setPass = getAccountPassword();
+                passReInput = anotherPasswordInput.nextLine();
             }
+        }
+        try {
+            Scanner flightMilesInput = new Scanner(System.in);
+            System.out.println("Please enter the distance(KM) that you have flown with us this year to obtain your remaining flight miles(Normal Rate):");
+            setFlightMiles((flightMilesInput.nextInt() * 3));
+            System.out.println("Flight Miles Set.");
+            System.out.println("----------------------------------------------------------------------------");
+        } catch(InputMismatchException e) {
+            System.out.println("Err: Wrong type of input! Rerun program and enter an integer when prompted.");
         }
     }
 

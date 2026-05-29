@@ -109,6 +109,7 @@ public class MainApp {
         System.out.println("1 - ".concat(aircraft1.getMake()) + " with capacity " + aircraft1.getTotalCapacity() + "," + "with " + aircraft1.getCrewCapacity() + " crew.");
         System.out.println("2 - ".concat(aircraft2.getMake()) + " with capacity " + aircraft2.getTotalCapacity() + "," + "with " + aircraft2.getCrewCapacity() + " crew.");
         System.out.println("3 - ".concat(aircraft3.getMake()) + " with capacity " + aircraft3.getTotalCapacity() + "," + "with " + aircraft3.getCrewCapacity() + " crew.");
+        System.out.println("4 - ");
 
         //Scanner implemented for input to record aircraft choice for flight details as an integer
         Scanner aircraftPicker = new Scanner(System.in);
@@ -163,8 +164,7 @@ public class MainApp {
             aircraft3.displayMaintainedAircraft();
             aircraft4.displayMaintainedAircraft();
         } else {
-            System.out.println("In that case, please complete the following: ");
-            System.out.println("Please also complete the following requests: ");
+            System.out.println("In that case, please complete the following (It will help develop our future business model): ");
             Destination newDestination = new DomesticDestination("", 0.0, false, false);
 
             //Following illustrates compile-time polymorphism (method overloading) through the creation of a new destination request.
