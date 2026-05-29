@@ -156,6 +156,7 @@ public class MainApp {
             aircraft1.isFlying();
             aircraft2.isFlying();
             aircraft3.isFlying();
+            aircraft4.isFlying();
             System.out.println("-------------------------------------------------------");
             System.out.println("Available aircraft: ");
             //Following method being called is final, can't be inherited
