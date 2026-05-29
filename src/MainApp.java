@@ -14,7 +14,7 @@ public class MainApp {
         Aircraft aircraft4 = new DomesticAirliner("A320", 180, 6, false, false, 828);
 
         //Aircraft Data Structure, using Arrays and calling fields using objects previously created
-        String[] aircraft_DataStore = {aircraft1.getMake(), aircraft2.getMake(), aircraft3.getMake(), aircraft4.getMake()   };
+        String[] aircraft_DataStore = {aircraft1.getMake(), aircraft2.getMake(), aircraft3.getMake(), aircraft4.getMake()};
 
         //Supported Domestic Destinations, showing object creation. Demonstrates hierarchical inheritance
         Destination destination1 = new DomesticDestination("Hawassa", 114.7, true, false);
