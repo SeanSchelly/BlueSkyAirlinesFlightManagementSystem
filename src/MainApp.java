@@ -141,6 +141,7 @@ public class MainApp {
             case 4:
                 passenger4.setAirplaneChoice(4);
                 System.out.println("Your choice(" + aircraft_DataStore[3] + ")" + " has been logged.");
+                break;
             default:
                 System.out.println("Invalid choice. You must select between the available aircraft (1-3).");
                 System.out.println("Rerun app.");
