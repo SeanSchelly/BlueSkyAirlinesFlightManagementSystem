@@ -33,6 +33,7 @@ public class Destination {
     }
 
     public void destinationAdditionRequest(int proposedPrice) {
+        //Ensures price input is not of an unsupported data type
         try {
             Scanner additionReq1 = new Scanner(System.in);
             System.out.println("Send us a pricing proposal(in $) for our future domestic flights. The price must be above $40: ");
